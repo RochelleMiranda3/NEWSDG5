@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2023 at 11:05 AM
+-- Generation Time: Dec 08, 2023 at 01:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -266,7 +266,7 @@ CREATE TABLE `research5.6.1` (
 
 CREATE TABLE `research5.6.2` (
   `ID` int(255) NOT NULL,
-  `no_non-discrimation_trans` varchar(255) NOT NULL,
+  `no_non_discrimation_trans` varchar(255) NOT NULL,
   `no_ppa_implemented` varchar(255) NOT NULL,
   `title_ppa` varchar(255) NOT NULL,
   `description_ppa` varchar(255) NOT NULL,
