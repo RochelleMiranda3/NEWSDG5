@@ -31,7 +31,7 @@ include '../includes/db.php'; ?>
         <div class="tab-content container-lg justify-content-center" id="pills-tabContent">
             <div class="tab-pane fade show active " id="pills-profile" role="tabpanel"
                 aria-labelledby="pills-profile-tab">
-                <div class="container d-grid" id="research311">
+                <div class="container d-grid" id="research511">
 
                     <!--start of the div content-->
                     <!--research 5.1.1-->
@@ -253,7 +253,7 @@ include '../includes/db.php'; ?>
                                     $query531 = "SELECT * FROM `research5.3.1`";
                                     $select531 = mysqli_query($conn, $query531);
 
-                                    if (mysqli_num_rows($select521) > 0) {
+                                    if (mysqli_num_rows($select531) > 0) {
                                         while ($row = mysqli_fetch_assoc($select531)) {
                                             $no_college_applicants = $row['no_college_applicants'];
                                             $no_admitted = $row['no_admitted'];
@@ -1116,6 +1116,1218 @@ include '../includes/db.php'; ?>
 
                         </div>
                     </div>
+
+                    <!--research 5.6.2-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.2</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Non-discrimination policies for transgender</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score562">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.2`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_562 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of non-discrimination for transgender policy:<?php echo $totalRecord_562 ?></h3>
+                                    <?php
+                                    $json_data_562 = json_encode($totalRecord_562);
+                                    $query562 = "SELECT * FROM `research5.6.2`";
+                                    $select562 = mysqli_query($conn, $query562);
+
+                                    if (mysqli_num_rows($select562) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select562)) {
+                                            $ID = $row['ID'];
+                                            $no_non_discrimination_trans = $row['no_non_discrimination_trans'];
+                                            $no_ppa_implemented = $row['no_ppa_implemented'];
+                                            $title_ppa = $row['title_ppa'];
+                                            $description_ppa = $row['description_ppa'];
+                                            $total_cost = $row['total_cost'];
+                                            $fund_source = $row['fund_source'];
+                                        
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of non-discrimination for transgender policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_non_discrimination_trans" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of 
+                                                    PPAs implemented in aacordance to the policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_ppa_implemented" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of 
+                                                    the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total 
+                                                    cost</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund
+                                                    source</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>        
+                    </div> 
+                    
+                    <!--research 5.6.3-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.3</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Maternity and paternity policies</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score563">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.3`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_563 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of of maternity and paternity policy:<?php echo $totalRecord_563 ?></h3>
+                                    <?php
+                                    $json_data_563 = json_encode($totalRecord_563);
+                                    $query563 = "SELECT * FROM `research5.6.3`";
+                                    $select563 = mysqli_query($conn, $query563);
+
+                                    if (mysqli_num_rows($select563) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select563)) {
+                                            $ID = $row['ID'];
+                                            $no_maternity_paternity = $row['no_maternity_paternity'];
+                                            $no_ppa_implemented = $row['no_ppa_implemented'];
+                                            $title_ppa = $row['title_ppa'];
+                                            $description_ppa = $row['description_ppa'];
+                                            $total_cost = $row['total_cost'];
+                                            $fund_source = $row['fund_source'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of maternity and paternity policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_maternity_paternity" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of 
+                                                    PPAs implemented in aacordance to the policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_ppa_implemented" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of 
+                                                    the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total 
+                                                    cost</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund
+                                                    source</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                                    
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.4-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.4</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Leave privileges of employees</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score564">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.4`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_564 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of of maternity and paternity policy:<?php echo $totalRecord_564 ?></h3>
+                                    <?php
+                                    $json_data_564 = json_encode($totalRecord_564);
+                                    $query564 = "SELECT * FROM `research5.6.4`";
+                                    $select564 = mysqli_query($conn, $query564);
+
+                                    if (mysqli_num_rows($select564) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select564)) {
+                                            $ID = $row['ID'];
+                                            $no_paternity = $row['no_paternity'];
+                                            $no_no_equi_paternity = $row['no_equi_paternity'];
+                                            $no_maternity_leave = $row['`no_maternity_leave` '];
+                                            $no_equi_maternity = $row['no_equi_maternity'];
+                                            $no_solo_parents = $row['no_solo_parents'];
+                                            $no_equi_solo_parents = $row['no_equi_solo_parents'];
+                                            $total_num_VAWC = $row['total_num_VAWC'];
+                                            $total_equi_VAWC = $row['total_equi_VAWC'];
+                                            $no_special = $row['no_special'];
+                                            $equi_special = $row['equi_special'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of maternity and paternity policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_paternity" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of 
+                                                    PPAs implemented in aacordance to the policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_equi_maternity" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of maternity leave 
+                                                    </span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_maternity_leave" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of equivalent maternity leave availed</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_equi_maternity" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of solo parent leave availed in the campus</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_solo_parents" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total equivalent amount of solo parent leave availed</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_equi_solo_parents" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of 10-day VAWC leave availed in the campus</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_num_VAWC" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total equivalent amount of 10-day VAWC leave availed</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_equi_VAWC" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">      
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of special leave benefits for women availed in the campus</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_special" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">      
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total equivalent amount of special leave benefits for women availed</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$equi_special" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">      
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.5-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.5</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Solo parent</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score565">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.5`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_565 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of solo parent employees<?php echo $totalRecord_565 ?></h3>
+                                    <?php
+                                    $json_data_565 = json_encode($totalRecord_565);
+                                    $query565 = "SELECT * FROM `research5.6.5`";
+                                    $select565 = mysqli_query($conn, $query565);
+
+                                    if (mysqli_num_rows($select565) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select565)) {
+                                            $ID = $row['ID'];
+                                            $no_solo_employees = $row['no_solo_employees'];
+                                            $no_solo_solo = $row['no_solo_solo'];
+                                            $no_solo_students = $row['`no_solo_students` '];
+                                            $no_solostudents_solo = $row['no_solostudents_solo'];
+                                            $no_solo_parents = $row['no_solo_parents'];
+                                            $no_employees_children_soloparent = $row['no_employees_children_soloparent'];
+                                            $total_num_student_soloparents = $row['total_num_student_soloparents'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of solo parent employees</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_solo_solo" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of solo parent employees with solo parent ID</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_solo_students" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of solo parent students</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_solostudents_solo" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of solo parent students with solo parent ID</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_solo_parents" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of employees who are children of solo parent</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_employees_children_soloparent" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of students who are children of solo parent</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_num_student_soloparents" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>     
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.6-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.6</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Childcare facilities for students</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score566">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.6`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_566 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of students who use the childcare facility (monthly)<?php echo $totalRecord_566 ?></h3>
+                                    <?php
+                                    $json_data_566 = json_encode($totalRecord_566);
+                                    $query566 = "SELECT * FROM `research5.6.6`";
+                                    $select566 = mysqli_query($conn, $query566);
+
+                                    if (mysqli_num_rows($select566) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select566)) {
+                                            $ID = $row['ID'];
+                                            $no_use_childfacility = $row['no_use_childfacility']
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of students who use the childcare facility (monthly)</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_use_childfacility" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>     
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.7-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.7</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Childcare facilities for staff and faculty</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score567">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.7`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_567 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of staff and faculty who use the childcare facility(monthly)<?php echo $totalRecord_567 ?></h3>
+                                    <?php
+                                    $json_data_567 = json_encode($totalRecord_567);
+                                    $query567 = "SELECT * FROM `research5.6.7`";
+                                    $select567 = mysqli_query($conn, $query567);
+
+                                    if (mysqli_num_rows($select567) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select567)) {
+                                            $ID = $row['ID'];
+                                            $no_staff_faculty = $row['no_staff_faculty'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of staff and faculty who use the childcare facility(monthly)</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_staff_faculty" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>     
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.8-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.8</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Womens mentoring schemes</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score568">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.8`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_568 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of mentoring schemes for female students<?php echo $totalRecord_568 ?></h3>
+                                    <?php
+                                    $json_data_568 = json_encode($totalRecord_568);
+                                    $query568 = "SELECT * FROM `research5.6.8`";
+                                    $select568 = mysqli_query($conn, $query568);
+
+                                    if (mysqli_num_rows($select568) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select568)) {
+                                            $ID = $row['ID'];
+                                            $no_mentoring_femalestudents = $row['no_mentoring_femalestudents'];
+                                            $title_ppa1 = $row['title_ppa1'];
+                                            $description_ppa = $row['`description_ppa` '];
+                                            $total_cost1 = $row['total_cost1'];
+                                            $fund_source1 = $row['fund_source1'];
+                                            $no_mentoring_female_employees = $row['no_mentoring_female_employees'];
+                                            $title_ppa2 = $row['title_ppa2'];
+                                            $short_description = $row['short_description'];
+                                            $total_cost2 = $row['total_cost2'];
+                                            $fund_source2 = $row['fund_source2'];
+                                            $total_female_employees = $row['total_female_employees'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of mentoring schemes for female students</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_mentoring_femalestudents" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of 
+                                                    the PPA1</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa1" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA<</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total Cost</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost1" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund Source1/span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source1" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of female students who participate in the mentoring schemes</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_mentoring_female_employees" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of the PPA2</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa2" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA<</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total Cost2</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost2" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund Source2</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source2" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of mentoring schemes for female employees</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_female_employees" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.6.9-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.9</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Policies protecting those reporting discrimination</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score569">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.9`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_569 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of non-discrimination for transgender policy:<?php echo $totalRecord_569 ?></h3>
+                                    <?php
+                                    $json_data_569 = json_encode($totalRecord_569);
+                                    $query569 = "SELECT * FROM `research5.6.9`";
+                                    $select569 = mysqli_query($conn, $query569);
+
+                                    if (mysqli_num_rows($select569) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select569)) {
+                                            $ID = $row['ID'];
+                                            $no_policy_protecting = $row['no_policy_protecting'];
+                                            $no_ppa_implemented = $row['no_ppa_implemented'];
+                                            $title_ppa = $row['title_ppa'];
+                                            $description_ppa = $row['description_ppa'];
+                                            $total_cost = $row['total_cost'];
+                                            $fund_source = $row['fund_source'];
+                                        
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of policy protecting those reporting discrimination</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_policy_protecting" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of PPAs implemented in accordance to the policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_ppa_implemented" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of 
+                                                    the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total 
+                                                    cost</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund
+                                                    source</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    <!--research 5.6.1.0-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.6.1.0</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Reports against discrimination</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score5610">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.6.1.0`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_5610 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of filed reports against discrimination<?php echo $totalRecord_5610 ?></h3>
+                                    <?php
+                                    $json_data_5610 = json_encode($totalRecord_5610);
+                                    $query5610 = "SELECT * FROM `research5.6.1.0`";
+                                    $select5610 = mysqli_query($conn, $query5610);
+
+                                    if (mysqli_num_rows($select5610) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select5610)) {
+                                            $ID = $row['ID'];
+                                            $no_reports_discrimination = $row['no_reports_discrimination'];
+                                            $no_resolved_discrimination = $row['no_resolved_discrimination'];
+                                        
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of policy protecting those reporting discrimination</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_reports_discrimination" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of PPAs implemented in accordance to the policy</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_ppa_implemented" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of resolved discrimination cases</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_resolved_discrimination" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.7.1-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.7.1</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">GAD Focal Point System</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score573">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.7.1`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_571 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Level of Functionality based on the FAT<?php echo $totalRecord_571 ?></h3>
+                                    <?php
+                                    $json_data_571 = json_encode($totalRecord_571);
+                                    $query571 = "SELECT * FROM `research5.7.1` WHERE level_functionality IS NOT NULL AND level_functionality <> ''";
+                                    $select571 = mysqli_query($conn, $query573);
+
+                                    if (mysqli_num_rows($select571) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select571)) {
+                                            $ID = $row['ID'];
+                                            $level_functionality = $row['level_functionality'];
+                                            $upload_memo = $row['upload_memo'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Level of Functionality based on the FAT</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$level_functionality" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Upload Memo of composition</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$upload_memo" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!--research 5.7.2-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.7.2</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Committee on Decorum and Investigation CODI</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score572">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.7.2`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_572 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Level of Functionality based on the FAT<?php echo $totalRecord_572 ?></h3>
+                                    <?php
+                                    $json_data_572 = json_encode($totalRecord_572);
+                                    $query572 = "SELECT * FROM `research5.7.2` WHERE no_conducted_CODI,  IS NOT NULL AND no_conducted_CODI <> ''";
+                                    $select572 = mysqli_query($conn, $query572);
+
+                                    if (mysqli_num_rows($select572) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select572)) {
+                                            $ID = $row['ID'];
+                                            $no_conducted_CODI = $row['no_conducted_CODI'];
+                                            $title_ppa = $row['title_ppa'];
+                                            $description_ppa = $row['description_ppa'];
+                                            $total_cost = $row['total_cost'];
+                                            $fund_source = $row['fund_source'];
+                                            
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of activities conducted in the campus by CODI</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_conducted_CODI" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            < <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Title of 
+                                                    the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$title_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Short description 
+                                                    of the PPA</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$description_ppa" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total 
+                                                    cost</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$total_cost" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Fund
+                                                    source</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$fund_source" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--research 5.7.3-->
+                    <div class="d-inline-flex mt-3">
+                        <div class="border border-dark w-100">
+                            <div class=" d-inline-flex justify-content-start align-items-center">
+                                <img src="../includes/img/goal-5.png" class="p-4 d-block" width="150" alt="">
+                                <div class="d-grid ms-5 me-5">
+                                    <p class="fw-normal">Target</p>
+
+                                    <!--Number of in every research-->
+                                    <h3 class="fw-bold">5.7.3</h3>
+
+                                    <!--Name of in every research-->
+                                    <h4 class="fw-bolder">Reports against sexual harassment</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle float-end w-100" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+
+                                    <!-- Eto para madisplay yung data sa sdg content-->
+                                    <h3 class="text-start ms-3" id="score573">Score:</h3>
+
+                                    <?php
+                                    $sql = "SELECT COUNT(*) AS total FROM `research5.7.3`";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $row = $result->fetch_assoc();
+                                        $totalRecord_573 = $row['total'];
+                                    }
+                                    ?>
+                                    <h3 class="text-start ms-3">Total number of filed sexual harassment cases<?php echo $totalRecord_573 ?></h3>
+                                    <?php
+                                    $json_data_573 = json_encode($totalRecord_573);
+                                    $query573 = "SELECT * FROM `research5.7.3`";
+                                    $select573 = mysqli_query($conn, $query573);
+
+                                    if (mysqli_num_rows($select573) > 0) {
+                                        while ($row = mysqli_fetch_assoc($select573)) {
+                                            $ID = $row['ID'];
+                                            $no_sexual_harrassment = $row['no_sexual_harrassment'];
+                                            $no_resolved_sexual_harrassment = $row['no_resolved_sexual_harrassment'];
+                                    ?>
+
+                                    <div class="container d-grid mt-3">
+                                        <div class="border border-dark p-3">
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of filed sexual harassment cases</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_sexual_harrassment" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+
+                                            
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text" id="basic-addon1">Total number of resolved sexual harassment cases</span>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo "$no_resolved_sexual_harrassment" ?>" readonly
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        
 
                 </div>
             </div>
